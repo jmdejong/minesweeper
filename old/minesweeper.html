@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+body{min-width:600;}
+canvas{
+ outline:1px solid black;
+}
+//#container{clear:both;}
+#timer{margin-left:80px;position:absolute ;}
+</style>
+<script src="../jslibs/function grid.js"></script>
+<script src="../jslibs/function timer.js"></script>
+<script src="minesweeper.js"></script>
+</head>
+<body>
+<p>
+<canvas id='canvas'>
+</canvas>
+<span id="timer">0</span>
+<br />
+<input type="radio" name="mode" onclick="mode=1;">mark
+</input>
+<input type="radio" name="mode" onclick="mode=0;" checked>sweep
+</input>
+<br />
+<span id="unfound"></span>
+<br />
+<button onclick="start(ne.w,ne.h,ne.m,ne.t)">restart</button>
+<!--button onclick="test()">test</button-->
+<br />
+<br />
+Difficulty:
+<br />
+<input type="radio" name="dif" onclick="ne.w=9;ne.h=9,ne.m=10" checked>Easy</input>
+<br />
+<input type="radio" name="dif" onclick="ne.w=16;ne.h=16,ne.m=40">Medium</input>
+<br />
+<input type="radio" name="dif" onclick="ne.w=30;ne.h=16,ne.m=99">Hard</input>
+<br />
+<input type="radio" name="dif" onclick="ne.w=prompt('width:','ne.w');ne.h=prompt('height:','ne.h');ne.m=prompt('mines:','ne.m');">Custom</input>
+<br />
+<br />
+Type:
+<br />
+<input type="radio" name="shape" onclick="ne.t=1;">4: Small</input>
+<br />
+<input type="radio" name="shape" onclick="ne.t=0;" checked>8: Classic</input>
+<br />
+<input type="radio" name="shape" onclick="ne.t=2;">12: Diamond</input>
+<br />
+<input type="radio" name="shape" onclick="ne.t=3;">20: Circle</input>
+<br />
+<input type="radio" name="shape" onclick="ne.t=4;">24: Big square</input>
+<br />
+<input type="radio" name="shape" onclick="ne.t=6;">6: Hexagon</input>
+<br />
+<br />
+<div id="description">
+<button onclick="alert('Minesweeper:\nTo sweep an area, click it while in sweep Mode. The goal of the game is to sweep all areas that do not have a mine. You lose when you sweep over a mine. Once you sweeped an area, the number in it will tell how many mines are in the surrounding cells. This helps you to find out where the mined are placed.\nThe mark mode is for your convenienve to mark an area where you think a mine is placed. To avoid accidental clicks, marked cells can not be swept. You can unmark a cell by clicking it again in mark mode.Right mouse button is always in mark mode.')">help</button>
+</div>
+</p>
+</body>
+</html>
+

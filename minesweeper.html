@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+.minesweeper {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0px auto;
+    width: 1024px;
+    padding: 20px;
+}
+/*.title {
+    border: 1px solid black;
+    width: 40%;
+    background-color: #eeeeee;
+}*/
+.result: {
+    height: 100%;
+}
+.gamefield {
+    outline: 5px solid black;
+    margin: 5px;
+}
+.resource {
+    display: none;
+}
+div {
+    margin: 5px;
+}
+    </style>
+    <script src="field.js"></script>
+    <script src="sprite.js"></script>
+    <script src="draw.js"></script>
+    <script src="minesweeper.js"></script>
+</head>
+<body>
+<div class="minesweeper" id="minesweeper-area">
+    <h2 id="title" class="title">MINE SWEEPER</h2>
+    <div>
+        <canvas id="canvas" class="gamefield"></canvas>
+        <span id="minecounter"></span>
+    </div>
+    <div>
+        <div>
+            <button id="restart">Restart</button>
+        </div>
+        <div>
+            <input id="fieldwidth" type="number" value=16 />
+            <input id="fieldheight" type="number" value=16 />
+            <input id="numberofmines" type="number" value=64 />
+        </div>
+    </div>
+</div>
+<img id="spritetiles" src="minetiles.png" class="resource" />
+</body>
+</html>
